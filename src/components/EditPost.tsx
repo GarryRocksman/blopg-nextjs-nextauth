@@ -88,7 +88,7 @@ const EditPost: React.FC<EditPostProps> = ({ post, onUpdate }) => {
               <DynamicReactQuill 
                 {...field}
                 theme="snow" 
-                value={field.value} 
+                value={field.value|| ''} 
                 onChange={(value) => field.onChange(value)}
               />
             )}
