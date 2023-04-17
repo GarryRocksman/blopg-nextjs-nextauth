@@ -14,4 +14,4 @@ export default function Create() {
       </div>
     </Layout>
   );
-};
+}
