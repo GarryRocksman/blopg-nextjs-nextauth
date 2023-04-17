@@ -8,7 +8,7 @@ import { authOptions } from "./api/auth/[...nextauth]";
 
 export default function Signin({ providers }: InferGetServerSidePropsType<typeof getServerSideProps>) {
   return (
-    <Layout>
+    <>
       <Head>
         <title>Sign in</title>
       </Head>
@@ -27,7 +27,7 @@ export default function Signin({ providers }: InferGetServerSidePropsType<typeof
           ))}
         </AuthForm>
       </div>
-    </Layout>
+    </>
   );
 }
 
