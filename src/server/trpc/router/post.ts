@@ -11,7 +11,7 @@ const postRouter = router({
   allPosts: publicProcedure.query(
     async ({ctx: {prisma}}) => {
       const posts = await prisma.post.findMany();
-      return posts;
+      return posts.sort((a, b) => b.id - a.id);
     }
   ),
   postById: publicProcedure.input(z.string()).query(
