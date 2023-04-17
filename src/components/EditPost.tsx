@@ -97,10 +97,10 @@ const EditPost: React.FC<EditPostProps> = ({ post, onUpdate }) => {
             {errors.content?.message}
           </p>
         </div>
-        <button type="submit" className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 mr-2 w-32 transition-colors text-center">
+        <button type="submit" className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 mr-2 w-32 transition-colors text-center duration-300">
           Update
         </button>
-        <Link type="button" className="bg-gray-600 hover:bg-gray-700 text-white px-4 py-2 w-32 transition-colors text-center" href="/">
+        <Link type="button" className="bg-gray-600 hover:bg-gray-700 text-white px-4 py-2 w-32 transition-colors text-center duration-300" href="/">
           Cancel
         </Link>
       </form>

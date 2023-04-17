@@ -15,19 +15,21 @@ const Post: React.FC<PostProps> = ({ post }) => {
   const editable = sessionData?.user?.id === authorId;
   
   return (
-    <div className="bg-white p-4 my-2 shadow prose prose-base max-w-full">
+    <div className="bg-white p-12 my-4 shadow">
       <div className='flex justify-between items-center'>
-        <h3 className="text-xl font-bold mb-2">
+        <h3 className="text-xl font-bold">
           {title} 
         </h3>
         {editable &&
-           <Link href={`/edit-post/${id}`} className='outline  outline-2 outline-gray-600  px-4 py-1'>
+           <Link href={`/edit-post/${id}`} className='outline  outline-2 outline-gray-600  px-4 py-1 hover:bg-gray-100 transotion-color duration-300'>
               Edit
            </Link>
         }
       </div>
-      <div className="w-full h-[1px] bg-gray-300 my-4"></div>
-      <Markup content={content} />
+      <div className="w-full h-[1px] bg-gray-300 my-8"></div>
+      <div className='prose prose-base max-w-full'>
+        <Markup content={content} />
+      </div>
     </div>
   );
 };

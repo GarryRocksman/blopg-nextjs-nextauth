@@ -12,6 +12,7 @@ import type { Post } from "@prisma/client";
 import { useRouter } from 'next/router';
 import Loader from "../components/Loader";
 import Footer from "../components/Footer";
+import BackToTop from "../components/BackToTop";
 
 const Home: NextPage = () => {
   const [posts, setPosts] = useState<Post[]>([]);
@@ -43,25 +44,22 @@ const Home: NextPage = () => {
           <title>B L O G</title>
           <link rel="icon" href="/favicon.ico" />
         </Head>
-        <div className="bg-gray-100 min-h-screen">
-          <Header />
-          <main className="container mx-auto px-4">
-            {isAuthenticated && (
-              <div className='mt-6 mb-6'>
-                <Button>
-                  <Link href={'/create'}>
-                    Create Post
-                  </Link>
-                </Button>
-              </div>
-            )}
-            {!!posts?.length 
-              ? <PostList posts={posts} />
-              : <Loader />
-            }
-          </main>
-        </div>
-        <Footer />
+        <main className="container mx-auto px-4 max-w-screen-lg">
+          {isAuthenticated && (
+            <div className='mt-6 mb-6'>
+              <Button>
+                <Link href={'/create'}>
+                  Create Post
+                </Link>
+              </Button>
+            </div>
+          )}
+          {!!posts?.length 
+            ? <PostList posts={posts} />
+            : <Loader />
+          }
+        </main>
+        <BackToTop />
     </Layout>
   );
 };
