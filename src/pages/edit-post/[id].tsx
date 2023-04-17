@@ -5,7 +5,6 @@ import Layout from '../../components/layout';
 import Head from 'next/head';
 import { trpc } from '../../utils/trpc';
 import type { Post } from '@prisma/client';
-import { number } from 'zod';
 
 const EditPostPage: React.FC = () => {
   const [post, setPost] = React.useState<Post | null>(null);

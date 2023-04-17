@@ -1,5 +1,8 @@
-export default function Layout({ children }) {
-  const name = 'Ihor';
-  
+
+type LayoutProps = {
+  children: React.ReactNode;
+};
+
+export default function Layout({ children }: LayoutProps) {  
   return <div>{children}</div>;
 }
