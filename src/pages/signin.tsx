@@ -18,7 +18,7 @@ export default function Signin({ providers }: InferGetServerSidePropsType<typeof
             <div key={provider.name}>
               <button 
                 type="button"
-                className="bg-gray-600 text-white px-4 py-2 hover:bg-gray-500 transition-colors w-full"
+                className="bg-gray-600 text-white px-4 py-2 hover:bg-gray-500 transition-colors w-full duration-300"
                 onClick={() => signIn(provider.id)}
                 >
                 Sign in with {provider.name}

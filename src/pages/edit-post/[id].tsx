@@ -36,7 +36,7 @@ const EditPostPage: React.FC = () => {
       <Head>
         <title>{post?.title}</title>
       </Head>
-    <div className="container mx-auto p-4">
+    <div className="container mx-auto p-4 max-w-screen-lg">
       {post && <EditPost post={post} onUpdate={handleUpdate} /> }
     </div>
     </Layout>

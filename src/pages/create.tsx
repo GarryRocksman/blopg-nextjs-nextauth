@@ -9,7 +9,7 @@ export default function Create() {
       <Head>
         <title>Create a New Post</title>
       </Head>
-      <div className="container mx-auto p-4">
+      <div className="container mx-auto p-4 max-w-screen-lg">
         <CreatePost />
       </div>
     </Layout>

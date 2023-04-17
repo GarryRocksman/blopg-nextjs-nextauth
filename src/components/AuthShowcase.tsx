@@ -16,7 +16,7 @@ const AuthShowcase: React.FC = () => {
         />
       )}
       <button
-        className="bg-gray-600 text-white px-4 py-2 hover:bg-gray-500 transition-colors"
+        className="bg-gray-600 text-white px-4 py-2 hover:bg-gray-500 transition-colors duration-300"
         onClick={sessionData ? () => signOut() : () => signIn()}
       >
         {sessionData ? "Sign out" : "Sign in"}

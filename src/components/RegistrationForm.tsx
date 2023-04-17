@@ -101,7 +101,7 @@ const  RegistrationForm:React.FC <RegistrationFormProps> = ({ onSubmit }) => {
         </div>
         <button
           type="submit"
-          className="bg-gray-600 hover:bg-gray-500 text-white px-4 py-2 w-full transition-colors"
+          className="bg-gray-600 hover:bg-gray-500 text-white px-4 py-2 w-full transition-colors duration-300"
         >
           Submit
         </button>
