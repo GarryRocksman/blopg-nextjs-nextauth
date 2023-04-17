@@ -3,7 +3,6 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useRouter } from "next/router";
 import { useSession } from "next-auth/react";
 
 interface RegistrationFormProps {
@@ -23,7 +22,6 @@ export const registrationFromSchema = z.object({
 });
 
 const  RegistrationForm:React.FC <RegistrationFormProps> = ({ onSubmit }) => {
-  const router = useRouter();
   const { data: sessionData } = useSession();
   
   const { register, handleSubmit, formState: {errors} } = useForm<RegistrationFormType>({
@@ -34,7 +32,6 @@ const  RegistrationForm:React.FC <RegistrationFormProps> = ({ onSubmit }) => {
 
   const onFormSubmit = (data: RegistrationFormType) => {
     onSubmit(data.nickname, data.phone, data.city);
-    router.push('/');
   };
 
   return (
