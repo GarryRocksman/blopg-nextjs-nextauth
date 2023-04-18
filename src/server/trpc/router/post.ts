@@ -5,13 +5,14 @@ import {
   router 
 } from '../trpc';
 import { createPostSchema } from '../../../components/CreatePost';
+import type { Post } from '@prisma/client';
 
 
 const postRouter = router({
   allPosts: publicProcedure.query(
     async ({ctx: {prisma}}) => {
       const posts = await prisma.post.findMany();
-      return posts.sort((a, b) => b.createdAt.getTime() - a.createdAt.getTime());
+      return posts.sort((a: Post, b: Post) => b.createdAt.getTime() - a.createdAt.getTime());
     }
   ),
   postById: publicProcedure.input(z.string()).query(
