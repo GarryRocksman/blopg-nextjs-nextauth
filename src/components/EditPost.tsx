@@ -9,9 +9,7 @@ import type { Post } from '@prisma/client';
 
 import dynamic from 'next/dynamic';
 const DynamicReactQuill = dynamic(() => import('react-quill'), {
-  // Optional: provide a loading component for when the component is being loaded
   loading: () => <p>Loading editor...</p>,
-  // Optional: set this to `true` if the component is a server-side rendered component
   ssr: false,
 });
 
@@ -54,7 +52,6 @@ const EditPost: React.FC<EditPostProps> = ({ post, onUpdate }) => {
   return (
     <div className="bg-white p-4 rounded shadow">
       <div className="flex items-center mb-4">
-        {/* Back arrow button */}
         <Link className="p-2 mr-2" href="/">
           <FontAwesomeIcon icon={faArrowLeft} />
         </Link>

@@ -7,15 +7,12 @@ interface PostListProps {
   posts: PostFromDB[];
 }
 
-const PostList: React.FC<PostListProps> = ({ posts }) => {
- 
-  return (
-    <div className="mt-4">
-      {posts.map((post) => (
-        <Post key={post.id} post={post} />
-      ))}
-    </div>
-  );
-};
+const PostList: React.FC<PostListProps> = ({ posts }) => (
+  <div className="mt-4">
+    {posts.map((post) => (
+      <Post key={post.id} post={post} />
+    ))}
+  </div>
+);
 
 export default PostList;

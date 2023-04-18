@@ -5,7 +5,7 @@ import { trpc } from "../utils/trpc";
 import { useRouter } from "next/router";
 
 
-export default function Registration() {
+const  Registration = () => {
   const router = useRouter();
   const updateUser = trpc.user.updateuser.useMutation();
 
@@ -29,3 +29,5 @@ export default function Registration() {
     </Layout>
   );
 }
+
+export default Registration;

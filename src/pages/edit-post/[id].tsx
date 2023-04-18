@@ -14,7 +14,6 @@ const EditPostPage: React.FC = () => {
   const postToEdit = trpc.post.postById.useQuery(id as string);
   const updatePost = trpc.post.updatePost.useMutation();
 
-
   useEffect(() => {
     if (postToEdit.data !== undefined && postToEdit.data !== null) {
       setPost(postToEdit.data);

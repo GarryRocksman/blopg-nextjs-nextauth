@@ -11,9 +11,7 @@ import { useRouter } from 'next/router';
 
 import dynamic from 'next/dynamic';
 const DynamicReactQuill = dynamic(() => import('react-quill'), {
-  // Optional: provide a loading component for when the component is being loaded
   loading: () => <p>Loading editor...</p>,
-  // Optional: set this to `true` if the component is a server-side rendered component
   ssr: false,
 });
 
@@ -31,6 +29,7 @@ export const createPostSchema = z.object({
 
 const CreatePost = () => {
   const router = useRouter();
+
   const { 
     register, 
     handleSubmit, 
@@ -42,7 +41,6 @@ const CreatePost = () => {
 
   const createNewPost = trpc.post.createPost.useMutation();
 
-  
   const onFormSubmit = async (data: CreatePostType) => {
     try {
       await createNewPost.mutateAsync(data);
@@ -52,7 +50,6 @@ const CreatePost = () => {
     }
   };
   
-
   return (
     <div className="bg-white p-4 shadow">
       <div className="flex items-center mb-4">

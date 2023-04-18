@@ -70,5 +70,4 @@ const postRouter = router({
   )
 })
 
-
 export default postRouter;
