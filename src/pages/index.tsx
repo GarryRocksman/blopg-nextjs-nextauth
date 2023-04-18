@@ -3,7 +3,6 @@ import Head from "next/head";
 import Link from "next/link";
 import { trpc } from "../utils/trpc";
 import Layout from "../components/layout";
-import Header from "../components/Header";
 import Button from "../components/Button";
 import PostList from "../components/PostList";
 import { useSession } from "next-auth/react";
@@ -11,7 +10,6 @@ import { useEffect, useState } from "react";
 import type { Post } from "@prisma/client";
 import { useRouter } from 'next/router';
 import Loader from "../components/Loader";
-import Footer from "../components/Footer";
 import BackToTop from "../components/BackToTop";
 
 const Home: NextPage = () => {

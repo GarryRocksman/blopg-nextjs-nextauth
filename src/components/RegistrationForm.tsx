@@ -28,8 +28,6 @@ const  RegistrationForm:React.FC <RegistrationFormProps> = ({ onSubmit }) => {
     resolver: zodResolver(registrationFromSchema),
   });
   
-
-
   const onFormSubmit = (data: RegistrationFormType) => {
     onSubmit(data.nickname, data.phone, data.city);
   };
